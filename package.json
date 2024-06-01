@@ -10,6 +10,7 @@
     "format": "prettier --write \"./*.{js,jsx,ts,tsx,json,css,scss,md}\"\n"
   },
   "dependencies": {
+    "@expo/vector-icons": "^14.0.2",
     "expo": "~51.0.9",
     "expo-linear-gradient": "^13.0.2",
     "expo-status-bar": "~1.12.1",

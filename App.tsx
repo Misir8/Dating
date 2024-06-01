@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
 import { SplashScreen } from './src/components/SplashScreen';
+import { FirstLogin } from './src/components/FirstLogin';
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -17,21 +17,7 @@ const App = () => {
     return <SplashScreen />;
   }
 
-  return (
-    <SafeAreaView style={styles.container}>
-      {/* Здесь размещаем основной контент приложения */}
-      <Text>Основной контент приложения</Text>
-    </SafeAreaView>
-  );
+  return <FirstLogin />;
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-});
 
 export default App;
