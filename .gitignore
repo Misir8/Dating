@@ -35,3 +35,7 @@ yarn-error.*
 *.tsbuildinfo
 
 .idea
+
+src/graphql/index.tsx
+src/graphql/schema.graphql
+src/graphql/type-policies.ts

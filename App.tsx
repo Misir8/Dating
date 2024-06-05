@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { SplashScreen } from './src/components/SplashScreen';
 import { FirstLogin } from './src/components/FirstLogin';
+import { ApolloProvider } from '@apollo/client';
+import { client } from './src/graphql/apolloClient';
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -13,11 +15,11 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (showSplash) {
-    return <SplashScreen />;
-  }
-
-  return <FirstLogin />;
+  return (
+    <ApolloProvider client={client}>
+      {showSplash ? <SplashScreen /> : <FirstLogin />}
+    </ApolloProvider>
+  );
 };
 
 export default App;

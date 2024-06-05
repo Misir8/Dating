@@ -1,0 +1,25 @@
+schema:
+  - './src/graphql/schema.graphql':
+      schemaPath: './src/graphql/schema.graphql'
+
+#  - ./src/graphql/cacheSchema.graphql:
+#      extensions:
+#        endpoints:
+#          introspect: true
+
+documents: ./src/**/*.graphql
+
+generates:
+  ./src/graphql/index.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      withComponent: false
+      withHOC: false
+      withHooks: true
+  ./src/graphql/type-policies.ts:
+    plugins:
+      - typescript-apollo-client-helpers

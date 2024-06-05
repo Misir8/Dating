@@ -7,9 +7,12 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import Feather from '@expo/vector-icons/Feather';
+import { MaterialIcons } from '@expo/vector-icons';
+import { useFilmListQuery } from '../graphql';
 
 export const FirstLogin = () => {
+  const { data, error } = useFilmListQuery();
+
   return (
     <SafeAreaView>
       <LinearGradient
@@ -37,7 +40,9 @@ export const FirstLogin = () => {
             }}
             source={require('./../../assets/images/0f01ec1b-9715-4c91-bdf9-73f806b6e3fd.png')}
           />
-          <Text style={{ fontSize: 14, fontWeight: '700' }}>Cupid Arrow</Text>
+          <Text style={{ fontSize: 14, fontWeight: '700' }}>
+            Cupid Arrow {data?.allFilms?.films?.[0]?.title}
+          </Text>
         </View>
         <View
           style={{
@@ -127,7 +132,7 @@ export const FirstLogin = () => {
                   marginRight: 20,
                 }}
               >
-                <Feather name='phone' size={24} color='black' />
+                <MaterialIcons name='phone' size={24} color='#FF5069' />
               </View>
               <Text
                 style={{

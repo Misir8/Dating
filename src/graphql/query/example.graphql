@@ -1,0 +1,9 @@
+query filmList{
+  allFilms{
+    films {
+      title
+      director
+      releaseDate
+    }
+  }
+}
