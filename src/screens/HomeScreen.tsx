@@ -1,4 +1,4 @@
-import { SplashScreen } from '../components/SplashScreen';
+import { Splash } from '../components/Splash';
 import { FirstLogin } from '../components/FirstLogin';
 import React, { useEffect, useState } from 'react';
 
@@ -13,5 +13,5 @@ export const HomeScreen = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  return showSplash ? <SplashScreen /> : <FirstLogin />;
+  return showSplash ? <Splash /> : <FirstLogin />;
 };

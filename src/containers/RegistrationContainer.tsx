@@ -1,14 +1,20 @@
-import { Formik } from 'formik';
+import { Formik, FormikValues } from 'formik';
 import { View, StyleSheet, Text } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
-import { Fontisto, MaterialIcons, AntDesign } from '@expo/vector-icons';
+import { MaterialIcons, AntDesign } from '@expo/vector-icons';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 export const RegistrationContainer = () => {
+  const { navigate } = useNavigation();
+  const handleFormSubmit = (values: FormikValues) => {
+    console.log(values);
+    navigate('ProfileSetup');
+  };
   return (
     <Formik
       initialValues={{ email: '', password: '' }}
-      onSubmit={values => console.log(values)}
+      onSubmit={handleFormSubmit}
     >
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <View style={styles.container}>

@@ -1,7 +1,7 @@
 import { Image, Text, View } from 'react-native';
 import React from 'react';
 
-export const SplashScreen = () => {
+export const Splash = () => {
   return (
     <>
       <View
