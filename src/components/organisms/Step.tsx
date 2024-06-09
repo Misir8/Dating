@@ -1,18 +1,20 @@
 import { SafeAreaView, StyleSheet, View } from 'react-native';
-import { ComponentType, FC, useState } from 'react';
+import { FC, useState } from 'react';
 import * as Progress from 'react-native-progress';
 import { Button } from 'react-native-paper';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
-interface StepProps {
+export interface StepProps {
   incrementStep: () => void;
+  setData?: (values: any) => void;
 }
 
 type StepsContainerProps = {
-  steps: Array<ComponentType<StepProps>>;
+  steps: Array<FC<StepProps>>;
+  setData?: (values: any) => void;
 };
 
-export const Step: FC<StepsContainerProps> = ({ steps }) => {
+export const Step: FC<StepsContainerProps> = ({ steps, setData }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const totalSteps = steps.length;
 
@@ -44,16 +46,19 @@ export const Step: FC<StepsContainerProps> = ({ steps }) => {
           borderRadius={10}
         />
       </View>
-      <Button
-        onPress={decrementStep}
-        style={styles.button}
-        icon={() => (
-          <FontAwesome6 name='arrow-left' size={24} color='#EA4335' />
-        )}
-        rippleColor='transparent'
-        underlayColor='transparent'
-      ></Button>
-      <View>{steps[currentStep]({ incrementStep })}</View>
+      {currentStep !== 0 ? (
+        <Button
+          onPress={decrementStep}
+          style={styles.button}
+          icon={() => (
+            <FontAwesome6 name='arrow-left' size={24} color='#EA4335' />
+          )}
+          rippleColor='transparent'
+        >
+          {''}
+        </Button>
+      ) : null}
+      <View>{steps[currentStep]({ incrementStep, setData })}</View>
     </SafeAreaView>
   );
 };

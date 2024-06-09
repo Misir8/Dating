@@ -22,7 +22,7 @@ export const Splash = () => {
             position: 'relative',
             left: 40,
           }}
-          source={require('./../../assets/images/0f01ec1b-9715-4c91-bdf9-73f806b6e3fd.png')}
+          source={require('../../../assets/images/0f01ec1b-9715-4c91-bdf9-73f806b6e3fd.png')}
         />
         <Text style={{ fontSize: 32, fontWeight: '700' }}>Cupid Arrow</Text>
       </View>

@@ -1,15 +1,17 @@
 import { Formik, FormikValues } from 'formik';
 import { View, StyleSheet, Text } from 'react-native';
-import { Button, TextInput } from 'react-native-paper';
+import { Button } from 'react-native-paper';
 import { MaterialIcons, AntDesign } from '@expo/vector-icons';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { CustomButton } from '../components/atoms/CustomButton';
+import { CustomTextInput } from '../components/atoms/CustomTextInput';
 
 export const RegistrationContainer = () => {
   const { navigate } = useNavigation();
   const handleFormSubmit = (values: FormikValues) => {
     console.log(values);
-    navigate('ProfileSetup');
+    navigate('ProfileSetup' as never);
   };
   return (
     <Formik
@@ -19,43 +21,20 @@ export const RegistrationContainer = () => {
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <View style={styles.container}>
           <Text style={styles.header}>Registration</Text>
-          <TextInput
-            theme={{
-              roundness: 50,
-              colors: { primary: '#FF5069' },
-            }}
-            outlineColor={'pink'}
-            mode={'outlined'}
-            style={styles.textInput}
+          <CustomTextInput
             placeholder={'Enter email'}
             onChangeText={handleChange('email')}
             onBlur={handleBlur('email')}
             value={values.email}
           />
-          <TextInput
-            theme={{
-              roundness: 50,
-              colors: { primary: '#FF5069' },
-            }}
-            underlineColor={'red'}
-            outlineColor={'pink'}
+          <CustomTextInput
             secureTextEntry={true}
-            mode={'outlined'}
-            style={styles.textInput}
             placeholder={'Enter password'}
             onChangeText={handleChange('password')}
             onBlur={handleBlur('password')}
             value={values.password}
           />
-          <Button
-            style={styles.submitBtn}
-            labelStyle={{ color: 'white' }}
-            mode={'contained'}
-            contentStyle={{ height: 60, width: 300 }}
-            onPress={() => handleSubmit()}
-          >
-            Continue
-          </Button>
+          <CustomButton label={'Continue'} onPress={() => handleSubmit()} />
           <View style={{ marginTop: 40 }}>
             <Button
               style={styles.socialBtn}
@@ -105,16 +84,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
-  },
-  textInput: {
-    width: 300,
-    marginTop: 10,
-    backgroundColor: 'white',
-  },
-  submitBtn: {
-    backgroundColor: '#FF5069',
-    marginTop: 20,
-    borderRadius: 50,
   },
   socialBtn: {
     backgroundColor: '#FFF',

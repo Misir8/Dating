@@ -1,5 +1,5 @@
-import { Splash } from '../components/Splash';
-import { FirstLogin } from '../components/FirstLogin';
+import { Splash } from '../components/organisms/Splash';
+import { FirstLogin } from '../components/organisms/FirstLogin';
 import React, { useEffect, useState } from 'react';
 
 export const HomeScreen = () => {

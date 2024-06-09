@@ -27,7 +27,7 @@ export const FirstLogin = () => {
             left: 10,
             top: 20,
           }}
-          source={require('./../../assets/images/0f01ec1b-9715-4c91-bdf9-73f806b6e3fd.png')}
+          source={require('../../../assets/images/0f01ec1b-9715-4c91-bdf9-73f806b6e3fd.png')}
         />
         <Text style={{ fontSize: 14, fontWeight: '700' }}>Cupid Arrow</Text>
       </View>
@@ -46,7 +46,7 @@ export const FirstLogin = () => {
             marginRight: 100,
             marginBottom: 0,
           }}
-          source={require('./../../assets/images/4b24dddd-ccc3-417a-8a78-4b5981ae480b.jpg')}
+          source={require('../../../assets/images/4b24dddd-ccc3-417a-8a78-4b5981ae480b.jpg')}
         />
         <Image
           style={{
@@ -57,7 +57,7 @@ export const FirstLogin = () => {
             position: 'relative',
             bottom: 80,
           }}
-          source={require('./../../assets/images/d9a1ee85-b64c-4e33-957f-4952a2fcc8ae.jpg')}
+          source={require('../../../assets/images/d9a1ee85-b64c-4e33-957f-4952a2fcc8ae.jpg')}
         />
         <Image
           style={{
@@ -68,7 +68,7 @@ export const FirstLogin = () => {
             position: 'relative',
             bottom: 130,
           }}
-          source={require('./../../assets/images/d0a85e22-e3ee-4679-a56d-d67326ea6f15.jpg')}
+          source={require('../../../assets/images/d0a85e22-e3ee-4679-a56d-d67326ea6f15.jpg')}
         />
       </View>
       <View style={{ position: 'relative', bottom: 100 }}>
