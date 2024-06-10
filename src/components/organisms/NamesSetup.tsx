@@ -1,4 +1,4 @@
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { StyleSheet, View, Dimensions, Text } from 'react-native';
 import { Formik } from 'formik';
 import React, { FC } from 'react';
 import * as Yup from 'yup';

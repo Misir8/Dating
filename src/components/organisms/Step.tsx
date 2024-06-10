@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row-reverse',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 50,
   },
   button: {
     position: 'relative',
